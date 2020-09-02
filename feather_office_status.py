@@ -35,7 +35,7 @@ def _setup(neopixels):
     return i2c, prox_sensor, pixels
 
 
-def main_loop(prox_threshold=3000, brightness=.1, colors=DEFAULT_COLORS,
+def main_loop(prox_threshold=3000, brightness=1, colors=DEFAULT_COLORS,
               sampling_time=.02, neopixels=(board.NEOPIXEL, 1),
               do_battery_check=True):
     """
