@@ -48,7 +48,7 @@ def main_loop(prox_threshold=3000, brightness=1, colors=DEFAULT_COLORS,
     pixels.brightness = brightness
 
     i = 0
-    color_idx = 0
+    color_idx = -1
     last_prox = -1
 
     # loop forever, updating the color whenever consecutive proximity samples go

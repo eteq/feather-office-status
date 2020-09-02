@@ -94,7 +94,9 @@ function. These include the following:
   Although note that at some point (for my office and device this was around
   2000), you might find it's *always* getting triggered and therefore useless.
 * `brightness`: A number between 0 and 1 indicating how bright the LED should
-  be (where 1 is the maximum brightness the LED can do and 0 is off).
+  be, where 1 is the maximum brightness the LED can do and 0 is off. Beware
+  that if you make this number too small (below ~0.01), colors will start
+  getting weird and eventually the whole thing will stop working.
 * `colors`: The set of colors to use as a list of RGB tuples. See
   ``feather_office_status.py`` for a few hand-calibrated colors that are
   known-good on the M4 Express.
