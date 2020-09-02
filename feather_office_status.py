@@ -13,7 +13,9 @@ green = (0, 255, 0)
 yellow = (255, 150, 0)
 orange = (255, 50, 0)
 red = (255, 0, 0)
+blue = (0, 0, 255)
 DEFAULT_COLORS = [green, yellow, red]
+DEFAULT_CB_FRIENDLY_COLORS = [blue, yellow, red]
 
 
 def blink_pixels(ntimes, secpertime):
@@ -33,8 +35,12 @@ def _setup(neopixels):
     return i2c, prox_sensor, pixels
 
 
-def main_loop(prox_threshold = 3000, brightness=.1, colors=DEFAULT_COLORS,
-              neopixels=(board.NEOPIXEL, 1), sampling_time=.02, do_battery_check=True):
+def main_loop(prox_threshold=3000, brightness=.1, colors=DEFAULT_COLORS,
+              sampling_time=.02, neopixels=(board.NEOPIXEL, 1),
+              do_battery_check=True):
+    """
+    See REAME.md for description of the keyword arguments.
+    """
     i2c, prox_sensor, pixels = _setup(neopixels)
     ncolors = len(colors)
 
