@@ -8,6 +8,7 @@ This DIY project results in a little device you can set on your office desk or
 wall with a nice bright light that indicates to those you share space with
 whether you are available to chat.
 
+![Image of M4 Express with feather-office-status working](https://eteq.github.io/feather-office-status/feather-office-status-demo.gif)
 
 ## Hardware Setup
 
