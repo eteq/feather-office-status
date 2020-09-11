@@ -41,6 +41,10 @@ def main_loop(prox_threshold=3000, brightness=1, colors=DEFAULT_COLORS,
     """
     See REAME.md for description of the keyword arguments.
     """
+    if do_battery_check == 'blink':
+        print("Doing battery blink")
+        battery_check_feather.led_voltage_loop(neopixels[0], nloops=1)
+
     i2c, prox_sensor, pixels = _setup(neopixels)
     ncolors = len(colors)
 
@@ -63,8 +67,8 @@ def main_loop(prox_threshold=3000, brightness=1, colors=DEFAULT_COLORS,
 
         if do_battery_check and i % 50 == 0:
             battery_voltage = battery_check_feather.get_battery_voltage()
-            if battery_voltage < 3.6:
-                if battery_voltage < 3.35:
+            if battery_voltage < 3.7:
+                if battery_voltage < 3.6:
                     print("battery very low!", battery_voltage)
                     blink_pixels(5, .05)
                 else:
